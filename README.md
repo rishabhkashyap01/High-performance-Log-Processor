@@ -24,8 +24,9 @@ high-performance-log-processor/
 │   │   └── lib.rs           # Rust performance logic
 │   └── Cargo.toml           # Build configuration & JNI dependencies
 └── app.log                  # Target log file for processing
+```
 
-## Setup and Installation
+## ⚙️ Setup and Installation
 Prerequisites
 
 JDK 22+ (configured with JAVA_HOME)
@@ -37,24 +38,34 @@ Xcode Command Line Tools (for macOS linkers)
 1. Build the Rust Native Library
 
 Bash
+```
 cd rust-core
 cargo build --release
+```
 This generates liblog_processor.dylib (macOS) in target/release.
 
 2. Compile the Java Client
 
-Bash
+Bash 
+```
 cd ../java-app/src
 javac LogProcessor.java
+```
+
 3. Run the Application
 
 Navigate back to the root directory and run:
 
 Bash
+```
 java --enable-native-access=ALL-UNNAMED \
      -Djava.library.path=./rust-core/target/release \
      -cp ./java-app/src LogProcessor
-📊 Performance Context
+```
+
+## 📊 Performance Context
+
 This project was developed to explore the efficiency gap between managed and unmanaged languages. By delegating string contains-checks to Rust, the system avoids the overhead of Java's Garbage Collector during massive file scans, making it ideal for processing gigabyte-scale logs.
 
-Developed by: Rishabh Kashyap
+
+Developed by:<u>Rishabh Kashyap</u>
