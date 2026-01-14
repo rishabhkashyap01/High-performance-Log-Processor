@@ -68,4 +68,4 @@ java --enable-native-access=ALL-UNNAMED \
 This project was developed to explore the efficiency gap between managed and unmanaged languages. By delegating string contains-checks to Rust, the system avoids the overhead of Java's Garbage Collector during massive file scans, making it ideal for processing gigabyte-scale logs.
 
 
-Developed by:<u>Rishabh Kashyap</u>
+Developed by:<ins>Rishabh Kashyap</ins>
